@@ -176,6 +176,8 @@ export default {
         })
         .then((response) => {
           console.log("data", response.data);
+          this.posts.unshift(response.data);
+          this.body = "";
         })
         .catch((error) => {
           console.log("error", error);
