@@ -8,4 +8,4 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 def post_list(request):
     posts = Post.objects.all()
     serializer = PostSerializer(posts, many=True)
-    return JsonResponse({'data': serializer.data})
+    return JsonResponse(serializer.data, safe=False)
