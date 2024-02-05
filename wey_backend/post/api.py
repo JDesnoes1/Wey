@@ -9,3 +9,10 @@ def post_list(request):
     posts = Post.objects.all()
     serializer = PostSerializer(posts, many=True)
     return JsonResponse(serializer.data, safe=False)
+
+@api_view(['POST'])
+def post_create(request):
+    data = request.data
+    print(data)
+
+    return JsonResponse({'hello': 'Hepp'})
